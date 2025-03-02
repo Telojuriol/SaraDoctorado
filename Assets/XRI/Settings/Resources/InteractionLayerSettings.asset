@@ -16,7 +16,6 @@ MonoBehaviour:
   - Default
   - 
   - 
-  - HandLayer
   - 
   - 
   - 
@@ -44,4 +43,5 @@ MonoBehaviour:
   - 
   - 
   - 
-  - Teleport
+  - 
+  - 
