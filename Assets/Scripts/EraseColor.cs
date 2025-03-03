@@ -57,11 +57,12 @@ public class EraseColor : MonoBehaviour
         // Verificar que el cubo con el que colisiona la brocha tiene el mismo color
         if (brushScorer != null && brushScorer.brushColor == tileColor)
         {
+            CanvasController.OnTileInteractedEvent(true, this);
             isBrushInside = true;
             if (!hasBeenInteracted)
             {
                 hasBeenInteracted = true;
-                SetTileTouchedAlpha(CanvasController.maxAlphaValueWhenInteracted);
+                //SetTileTouchedAlpha(CanvasController.maxAlphaValueWhenInteracted);
             }
             //gameObject.SetActive(false);
             //brushScorer.TileRemoved();
@@ -74,6 +75,7 @@ public class EraseColor : MonoBehaviour
         // Verificar que el cubo con el que colisiona la brocha tiene el mismo color
         if (brushScorer != null && brushScorer.brushColor == tileColor)
         {
+            CanvasController.OnTileInteractedEvent(false, this);
             isBrushInside = false;
             //gameObject.SetActive(false);
             //brushScorer.TileRemoved();
