@@ -33,8 +33,6 @@ public class paintColumnController : MonoBehaviour
 
     private void Update()
     {
-        if(columnColor != Scorer.EColor.Blue) return;
-
         if (!AllTilesRemoved && interactionStarted)
         {
             if (!BrushOutsideColumns())
@@ -46,6 +44,7 @@ public class paintColumnController : MonoBehaviour
                     SetTilesUnderIndexAlpha(brushPosition,currentAlpha);
                     if (currentAlpha < CanvasController.minAlphaValueWhenInteracted)
                     {
+                        SetCanvasControllerScore();
                         currentAlpha = 0;
                         SetTilesUnderIndexAlpha(brushPosition, currentAlpha);
                         AllTilesRemoved = true;
@@ -66,31 +65,7 @@ public class paintColumnController : MonoBehaviour
                 interactionStarted = false;
             }
         }
-        return;
-        if (!AllTilesRemoved && AllTilesInteracted())
-        {
-            if (LastTileBeingBrushed())
-            {               
-                removingTiles = true;
-                currentAlpha -= (CanvasController.maxAlphaValueWhenInteracted - CanvasController.minAlphaValueWhenInteracted) * Time.deltaTime / CanvasController.timeToRemoveTiles;
-                SetAllTilesAlpha(currentAlpha);
-                if(currentAlpha < CanvasController.minAlphaValueWhenInteracted)
-                {
-                    currentAlpha = 0;
-                    SetAllTilesAlpha(currentAlpha);
-                    AllTilesRemoved = true;
-                }
-            }
-            else
-            {
-                if (removingTiles)
-                {
-                    currentAlpha = CanvasController.maxAlphaValueWhenInteracted;
-                    SetAllTilesAlpha(currentAlpha);
-                    removingTiles = false;
-                }              
-            }
-        }
+      
     }
 
     private bool BrushPositionStable()
@@ -98,6 +73,28 @@ public class paintColumnController : MonoBehaviour
         bool brushPositionStable = brushPosition == previousBrushPosition;
         previousBrushPosition = brushPosition;
         return brushPositionStable;
+    }
+
+    private void SetCanvasControllerScore()
+    {
+        switch (columnColor)
+        {
+            case Scorer.EColor.Blue:
+                CanvasController.instance.blueScore = brushPosition + 1;
+                break;
+            case Scorer.EColor.Yellow:
+                CanvasController.instance.yellowScore = brushPosition + 1;
+                break;
+            case Scorer.EColor.Magenta:
+                CanvasController.instance.magentaScore = brushPosition + 1;
+                break;
+            case Scorer.EColor.Green:
+                CanvasController.instance.greenScore = brushPosition + 1;
+                break;
+            case Scorer.EColor.White:
+                CanvasController.instance.whiteScore = brushPosition + 1;
+                break;
+        }
     }
 
     private void OnTileInteractedEvent(bool entered, EraseColor tile)

@@ -5097,7 +5097,7 @@ GameObject:
   - component: {fileID: 381697057}
   - component: {fileID: 381697056}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6253,7 +6253,7 @@ GameObject:
   - component: {fileID: 629402298}
   - component: {fileID: 629402297}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6839,7 +6839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &674901420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8131,7 +8131,7 @@ GameObject:
   - component: {fileID: 828471512}
   - component: {fileID: 828471511}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14300,7 +14300,7 @@ GameObject:
   - component: {fileID: 1401083425}
   - component: {fileID: 1401083424}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18589,6 +18589,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c216a3cdaf537478b1d39d642f004e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blueScore: 0
+  yellowScore: 0
+  magentaScore: 0
+  greenScore: 0
+  whiteScore: 0
+  EndCanvas: {fileID: 674901419}
+  blueScoreText: {fileID: 828471511}
+  greenScoreText: {fileID: 381697056}
+  whiteScoreText: {fileID: 1950320694}
+  magentaScoreText: {fileID: 629402297}
+  yellowScoreText: {fileID: 1401083424}
 --- !u!43 &1733713608
 Mesh:
   m_ObjectHideFlags: 0
@@ -22307,7 +22318,7 @@ GameObject:
   - component: {fileID: 1950320695}
   - component: {fileID: 1950320694}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
