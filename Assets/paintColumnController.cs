@@ -55,6 +55,11 @@ public class paintColumnController : MonoBehaviour
         return columnTiles[columnTiles.Count - 1].GetIsBrushInside();
     }
 
+    private bool BrushOutsideColumn()
+    {
+        return true;
+    }
+
     private void SetAllTilesAlpha(float alpha)
     {
         for (int i = 0; i < columnTiles.Count; i++)
